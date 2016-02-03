@@ -1,3 +1,0 @@
-= redmine_emoji_filter
-
-Description goes here
