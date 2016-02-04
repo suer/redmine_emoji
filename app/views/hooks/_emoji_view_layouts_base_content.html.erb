@@ -1,0 +1,43 @@
+<%= javascript_include_tag('jquery-textcomplete', plugin: :redmine_emoji_filter) %>
+
+<script>
+(function() {
+  $('.wiki-edit').textcomplete([
+    {
+      emojies: <%= Emoji.names.to_json.html_safe %>,
+      match: /\B:([\-+\w]*)$/,
+      search: function (term, callback) {
+        callback($.map(this.emojies, function (emoji) {
+          return emoji.indexOf(term) === 0 ? emoji : null;
+        }));
+      },
+      template: function (value) {
+        return '<img src="' + '<%= image_path("emoji/") %>' + value + '.png" width="20px"></img>' + value;
+      },
+      replace: function (value) {
+        return ':' + value + ': ';
+      },
+      index: 1,
+    }
+  ],
+  {
+    maxCount: 5
+  });
+})();
+</script>
+
+<style type="text/css">
+.textcomplete-dropdown {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0px 0px 50px;
+}
+.textcomplete-dropdown li {
+  padding: 2px 5px;
+}
+.textcomplete-dropdown .active {
+  background-color: #6eb7db;
+}
+</style>

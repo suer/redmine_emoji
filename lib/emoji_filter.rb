@@ -23,4 +23,8 @@ module EmojiFilter
       end
     end
   end
+
+  class Listener < Redmine::Hook::ViewListener
+    render_on :view_layouts_base_content, :partial=> 'hooks/emoji_view_layouts_base_content'
+  end
 end

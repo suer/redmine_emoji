@@ -34,6 +34,11 @@ Requirements
 
 * Redmine 3.0 or later
 
+Credit
+------------------------------
+
+* [jquery-textcomplete](https://github.com/yuku-t/jquery-textcomplete/)
+
 License
 ------------------------------
 The MIT License (MIT)
