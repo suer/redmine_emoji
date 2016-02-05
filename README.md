@@ -17,7 +17,6 @@ Type below command:
 $ cd $RAILS_ROOT/plugins
 $ git clone https://github.com/suer/redmine_emoji_filter.git
 $ bundle install
-$ rake emoji
 ```
 
 and restart your Redmine.

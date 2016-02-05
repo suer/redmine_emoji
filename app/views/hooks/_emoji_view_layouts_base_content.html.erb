@@ -12,7 +12,7 @@
         }));
       },
       template: function (value) {
-        return '<img src="' + '<%= image_path("emoji/") %>' + value + '.png" width="20px"></img>' + value;
+        return '<img src="' + '<%= url_for(controller: :emoji, action: :index, name: "cat") %>/../' + value + '.png" width="20px"></img>' + value;
       },
       replace: function (value) {
         return ':' + value + ': ';

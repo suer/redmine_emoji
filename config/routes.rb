@@ -1,2 +1,1 @@
-# Plugin's routes
-# See: http://guides.rubyonrails.org/routing.html
+get 'emoji/:name.png', controller: :emoji, action: :index

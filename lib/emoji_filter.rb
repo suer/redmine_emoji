@@ -4,7 +4,6 @@ module EmojiFilter
       base.send(:include, InstanceMethods)
       base.class_eval do
         unloadable
-        include ActionView::Helpers::AssetUrlHelper
         alias_method_chain :to_html, :emoji
       end
     end
@@ -15,7 +14,7 @@ module EmojiFilter
         html.gsub(/:([^:\s]+):/) do |match|
           icon = $1
           if Emoji.names.include?(icon)
-            %(<img src="#{image_url("emoji/#{icon}.png")}" style="width:16px" title="#{icon}" alt="#{icon}"/>)
+            %(<img src="#{ Rails.application.routes.url_helpers.url_for(controller: :emoji, action: :index, name: icon, only_path: true)}" style="width:16px" title="#{icon}" alt="#{icon}"/>)
           else
             match
           end
