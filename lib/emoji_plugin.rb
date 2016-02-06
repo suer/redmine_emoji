@@ -1,4 +1,4 @@
-module EmojiFilter
+module EmojiPlugin
   module Patch
     def self.included(base)
       base.send(:include, InstanceMethods)
