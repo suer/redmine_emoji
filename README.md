@@ -1,4 +1,4 @@
-Redmine Emoji Filter
+Redmine Emoji
 ===================================
 
 This plugin adds emoji to wiki formatting like :angel:.
@@ -15,7 +15,7 @@ Type below command:
 
 ```
 $ cd $RAILS_ROOT/plugins
-$ git clone https://github.com/suer/redmine_emoji_filter.git
+$ git clone https://github.com/suer/redmine_emoji.git
 $ bundle install
 ```
 

@@ -1,4 +1,4 @@
-<%= javascript_include_tag('jquery-textcomplete', plugin: :redmine_emoji_filter) %>
+<%= javascript_include_tag('jquery-textcomplete', :plugin => :redmine_emoji) %>
 
 <script>
 (function() {
@@ -12,7 +12,7 @@
         }));
       },
       template: function (value) {
-        return '<img src="' + '<%= url_for(controller: :emoji, action: :index, name: "cat") %>/../' + value + '.png" width="20px"></img>' + value;
+        return '<img src="' + '<%= url_for(:controller => :emoji, :action => :index, :name => "cat") %>/../' + value + '.png" width="20px"></img>' + value;
       },
       replace: function (value) {
         return ':' + value + ': ';
