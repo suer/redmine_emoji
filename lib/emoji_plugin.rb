@@ -14,7 +14,7 @@ module EmojiPlugin
         html.gsub(/:([^:\s]+):/) do |match|
           icon = $1
           if Emoji.names.include?(icon)
-            %(<img src="#{ Redmine::Utils.relative_url_root + Rails.application.routes.url_helpers.url_for(:controller => :emoji, :action => :index, :name => icon, :only_path => true)}" style="width:16px" title="#{icon}" alt="#{icon}"/>)
+            %(<img src="#{ Rails.application.routes.url_helpers.url_for(:controller => :emoji, :action => :index, :name => icon, :only_path => true)}" style="width:16px" title="#{icon}" alt="#{icon}"/>)
           else
             match
           end
