@@ -1,16 +1,12 @@
 module EmojiPlugin
   module Patch
     def self.included(base)
-      base.send(:include, InstanceMethods)
-      base.class_eval do
-        unloadable
-        alias_method_chain :to_html, :emoji
-      end
+      base.prepend(InstanceMethods)
     end
 
     module InstanceMethods
-      def to_html_with_emoji
-        html = to_html_without_emoji
+      def to_html(*args)
+        html = super(*args)
         html.gsub(/:([^:\s]+):/) do |match|
           icon = $1
           if Emoji.names.include?(icon)
