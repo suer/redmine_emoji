@@ -4,7 +4,7 @@ Redmine::Plugin.register :redmine_emoji do
   name 'Redmine Emoji plugin'
   author 'suer'
   description 'This is a plugin for Redmine to add emoji'
-  version '0.0.1'
+  version '0.0.2'
   url 'https://github.com/suer/redmine_emoji'
   author_url 'https://d.hatena.ne.jp/suer'
 end
