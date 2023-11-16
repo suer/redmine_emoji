@@ -1,5 +1,3 @@
-require 'emoji_plugin'
-
 Redmine::Plugin.register :redmine_emoji do
   name 'Redmine Emoji plugin'
   author 'suer'
